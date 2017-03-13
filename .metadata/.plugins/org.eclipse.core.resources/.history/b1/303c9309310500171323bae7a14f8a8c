@@ -1,0 +1,17 @@
+package testing;
+
+import mapGenerator.Level;
+import mapGenerator.LevelType;
+
+public class tests {
+	public static int numOfPlanks = 6;
+	public static void main(String[] args) {
+		Level level1 = new Level(numOfPlanks,LevelType.UP);
+		
+		for (int i = 0; i < numOfPlanks - 1; i++) {
+			System.out.println(level1.getPlankOrder()[numOfPlanks]);
+		}
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package mapMaterial;
+
+import mapGenerator.Level;
+
+public class Goat {
+	private double x = 0.0;
+	private double y = 0.0;
+	private double start = 0; // height of starting plank
+	private double end = 0; //height of ending plank
+	private double distance = 0; // the distance it has to travel
+	private Plank currentPlank;
+	
+	
+	public Goat(Level l){
+		distance = l.getNumOfPlanks() * (Constants.WIDTH_OF_PLANK + Constants.DISTANCE_BETWEEN_PLANKS); 
+		start = PlankList.getPlank(0).plankHeight();
+		end = PlankList.getPlank(0).LeftXOfPlank();
+		currentPlank = PlankList.getPlank(0);
+	}
+	
+	public void MoveGoatToUpperPlank(){
+		x++;
+		y = -1 * Constants.PORABOLA_WIDTH * (x - currentPlank.plankHeight() + 5) + currentPlank.LeftXOfPlank() + (Constants.DISTANCE_BETWEEN_PLANKS + Constants.WIDTH_OF_PLANK)/2;
+	}
+	
+	public Plank getCurrentPlank(){
+		return currentPlank;
+	}
+	
+	public void moveToNextPlank(){
+		int temp = PlankList.indexOf(currentPlank);
+		currentPlank = PlankList.getPlank(temp + 1);
+	}
+	
+	
+	
+}

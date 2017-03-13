@@ -1,0 +1,14 @@
+package testing;
+
+import mapGenerator.Level;
+import mapGenerator.LevelType;
+
+public class tests {
+
+	public static void main(String[] args) {
+		Level level1 = new Level(6,LevelType.UP);
+		System.out.println(level1.getPlankOrder().toString());
+
+	}
+
+}

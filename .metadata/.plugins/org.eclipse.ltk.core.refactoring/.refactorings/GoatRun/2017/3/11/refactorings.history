@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;y&apos; in &apos;mapMaterial.Goat&apos; to &apos;realY&apos;&#x0D;&#x0A;- Original project: &apos;GoatRun&apos;&#x0D;&#x0A;- Original element: &apos;mapMaterial.Goat.y&apos;&#x0D;&#x0A;- Renamed element: &apos;mapMaterial.Goat.realY&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;y&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;mapMaterial{Goat.java[Goat^y" name="realY" references="true" setter="false" stamp="1489342958624" textual="false" version="1.0"/>
+</session>

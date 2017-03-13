@@ -1,0 +1,27 @@
+package mapMaterial;
+
+import java.util.ArrayList;
+
+public class PlankList {
+	private static ArrayList<Plank> s = new ArrayList<Plank>(); 
+	
+	public static void add(Plank p){
+		s.add(p);
+	}
+	
+	public static int indexOf(Plank p){
+		return s.indexOf(p);
+	}
+	
+	public static boolean contains(Plank p){
+		return s.contains(p);
+	}
+	
+	public static Plank getPlank(int i){
+		return s.get(i);
+	}
+	
+	public static void clean(){
+		s.clear();
+	}
+}

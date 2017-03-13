@@ -1,0 +1,12 @@
+package mapMaterial;
+
+public class Plank {
+	int height = 0;
+	int pos = 0;
+	boolean used = false;
+	
+	public Plank(){
+		
+	}
+	
+}

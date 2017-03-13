@@ -1,0 +1,46 @@
+package mapMaterial;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class PlankList {
+	private static int amountOfSwaps = 0;
+	private static ArrayList<Plank> s = new ArrayList<Plank>(); 
+	
+	public static void add(Plank p){
+		s.add(p);
+	}
+	
+	public static int indexOf(Plank p){
+		return s.indexOf(p);
+	}
+	
+	public static boolean contains(Plank p){
+		return s.contains(p);
+	}
+	
+	public static Plank getPlank(int i){
+		return s.get(i);
+	}
+	
+	public static void clean(){
+		s.clear();
+		amountOfSwaps = 0;
+	}
+	
+	public static void swapPlanks(int i, int j){
+		Collections.swap(s, i, j);
+		int temp = s.get(i).getPos();
+		s.get(i).setPos(j);
+		s.get(j).setPos(temp);
+	}
+	
+	public static void incSwaps(){
+		amountOfSwaps++;
+	}
+	
+	public static int getSwaps(){
+		return amountOfSwaps;
+	}
+	
+}

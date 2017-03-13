@@ -1,0 +1,33 @@
+package mapMaterial;
+
+import mapGenerator.Level;
+
+public class Goat {
+	private double x = 0.0;
+	private double y = 0.0;
+	private int start = 0; // height of starting plank
+	private int end = 0; //height of ending plank
+	private int distance = 0; // the distance it has to travel
+	
+	public Goat(Level l){
+		distance = l.getNumOfPlanks();
+		switch(l.getLevelType()){
+			case UP:
+				start = 0;
+				end = l.getNumOfPlanks() - 1;
+				break;
+			case DOWN:
+				start = l.getNumOfPlanks() - 1;
+				end = 0;
+				break;
+			case UP_DOWN:
+				start = 0;
+				end = 0;
+			case DOWN_UP:
+				start = l.getNumOfPlanks()/2;
+		}
+	}
+	
+	
+	
+}

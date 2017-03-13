@@ -1,0 +1,42 @@
+package mapMaterial;
+
+public class Plank {
+	private int height = 0;
+	private int pos = 0;
+	private boolean used = false;
+	
+	public Plank(int h, int p){
+		height = h;
+		pos = p;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
+	
+	public int getPos(){
+		return pos;
+	}
+	
+	public boolean getUsed(){
+		return used;
+	}
+	
+	public void setHeight(int h){
+		height = h;
+	}
+	
+	public void setPos(int p){
+		pos = p;
+	}
+	
+	public void setUsed(boolean u){
+		used = u;
+	}
+	
+	
+	public boolean equals(Plank p){
+		return this.height == p.getHeight();
+	}
+	
+}

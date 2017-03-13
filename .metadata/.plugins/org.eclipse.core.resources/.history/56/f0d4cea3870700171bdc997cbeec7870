@@ -1,0 +1,54 @@
+package mapMaterial;
+
+import mapGenerator.Level;
+
+public class Goat {
+	private double x = 0.0; // this x is only used to calculate y
+	private double realX = 0.0;
+	private double realY = 0.0;
+	private double start = 0; // height of starting plank
+	private double end = 0; //height of ending plank
+	private double distance = 0; // the distance it has to travel
+	private Plank currentPlank;
+	private float PLANK_CONST = 5; // changes arc a bit depeding on goat going up or down
+	
+	
+	
+	public Goat(Level l){
+		distance = l.getNumOfPlanks() * (Constants.WIDTH_OF_PLANK + Constants.DISTANCE_BETWEEN_PLANKS); 
+		start = PlankList.getPlank(0).plankHeight();
+		end = PlankList.getPlank(0).LeftXOfPlank();
+		currentPlank = PlankList.getPlank(0);
+	}
+	
+	public void MoveGoatToUpperPlank(){
+		x++;
+		realX++;
+		realY = -1 * Constants.PORABOLA_WIDTH * (x - currentPlank.plankHeight() + 5) + currentPlank.LeftXOfPlank() + (Constants.DISTANCE_BETWEEN_PLANKS + Constants.WIDTH_OF_PLANK)/2 + PLANK_CONST;
+	}
+	
+	public void MoveGoatToLowerPlank(){
+		x++;
+		realX++;
+		realY = -1 * Constants.PORABOLA_WIDTH * (x - currentPlank.plankHeight() + 5) + currentPlank.LeftXOfPlank() + (Constants.DISTANCE_BETWEEN_PLANKS + Constants.WIDTH_OF_PLANK)/2 - PLANK_CONST;
+	}
+	
+	public boolean goatGotToNextPlank(){
+		if (realX == currentPlank.LeftXOfPlank() + Constants.DISTANCE_BETWEEN_PLANKS + Constants.WIDTH_OF_PLANK){
+			int temp = PlankList.indexOf(currentPlank);
+			currentPlank = PlankList.getPlank(temp + 1);
+			x = 0;
+			return true;
+		}else
+			return false;
+	}
+	
+	public Plank getCurrentPlank(){
+		return currentPlank;
+	}
+	
+	public boolean doneGoatMove
+	
+	
+	
+}

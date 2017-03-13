@@ -1,0 +1,34 @@
+package mapGenerator;
+
+import java.util.ArrayList;
+
+import mapMaterial.Plank;
+import mapMaterial.PlankList;
+
+public class Level {
+	private int numberOfPlanks = 0;
+	private LevelType type = LevelType.UP; 
+	
+	public Level(int p, LevelType t){
+		this.numberOfPlanks = p;
+		this.type = t;
+	}
+	
+	private void GenerateArray(){
+		ArrayList<Integer> poss = new ArrayList<Integer>();
+		
+		int randomNum ;
+		for (int i = 0; i < this.numberOfPlanks; i++){
+			poss.add(i);
+			
+		}
+		for (int i = 0; i < this.numberOfPlanks; i++){
+			randomNum = (int)(Math.random() * poss.size());
+			int newPos = poss.get(randomNum);
+			poss.remove(randomNum);
+			PlankList.add(new Plank(i,newPos));
+		}
+	}
+	
+	
+}

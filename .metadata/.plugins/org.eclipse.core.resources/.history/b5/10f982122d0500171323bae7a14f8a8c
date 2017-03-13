@@ -1,0 +1,6 @@
+package mapGenerator;
+
+public class GenerateLevel {
+	private int numberOfPlanks = 0;
+	private LevelType = LevelType.UP; 
+}

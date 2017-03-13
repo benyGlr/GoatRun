@@ -1,0 +1,33 @@
+package testing;
+
+import java.util.Scanner;
+
+import mapGenerator.Level;
+import mapGenerator.LevelType;
+import mapMaterial.PlankList;
+
+public class tests {
+	public static int numOfPlanks = 7;
+	public static void main(String[] args) {
+		Level level2 = new Level(numOfPlanks,LevelType.DOWN_UP);
+		for (int i = 0; i < numOfPlanks; i++) {
+			System.out.print(level2.getPlankOrder()[i] + " ");
+		}
+		
+			//System.out.println(level1.getPlankOrderPos()[i]);
+		System.out.println(level2.checkWin());
+		while (level2.checkWin() != true){
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("blocks to switch? ");
+			String indexes = scanner.next();
+			PlankList.swapPlanks(Integer.parseInt(indexes.substring(0, 1)), Integer.parseInt(indexes.substring(1, 2)));
+			System.out.println("new height order is ");
+			for (int i = 0; i < numOfPlanks; i++) 
+				System.out.print(level2.getPlankOrder()[i] + " ");
+		}
+		System.out.println("done");
+		
+
+	}
+
+}
