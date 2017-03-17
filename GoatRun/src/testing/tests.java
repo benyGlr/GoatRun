@@ -7,7 +7,7 @@ import mapGenerator.LevelType;
 import mapMaterial.PlankList;
 
 public class tests {
-	public static int numOfPlanks = 7;
+	/*public static int numOfPlanks = 7;
 	public static void main(String[] args) {
 		Level level2 = new Level(numOfPlanks,LevelType.DOWN_UP);
 		for (int i = 0; i < numOfPlanks; i++) {
@@ -28,6 +28,6 @@ public class tests {
 		System.out.println("done");
 		
 
-	}
+	}*/
 
 }

@@ -2,6 +2,7 @@ package mapGenerator;
 
 import java.util.ArrayList;
 
+import errors.WrongLevelTypeException;
 import mapMaterial.Plank;
 import mapMaterial.PlankList;
 
@@ -9,11 +10,11 @@ public class Level {
 	private int numberOfPlanks = 0;
 	private LevelType type = LevelType.UP; 
 	
-	public Level(int p, LevelType t){
+	public Level(int p, LevelType t) throws WrongLevelTypeException{
 		this.numberOfPlanks = p;
 		this.type = t;
 		PlankList.clean();
-		switch (type) {
+		switch (t) {
 			case UP:
 				GenerateArrayUD();
 				break;
@@ -24,15 +25,15 @@ public class Level {
 				if (numberOfPlanks%2==1)
 					GenerateArrayHill();
 				else
-					System.out.println("the number of planks should be odd");
+					throw new WrongLevelTypeException(t);
 			case DOWN_UP:
 				if (numberOfPlanks%2==1)
 					GenerateArrayGrove();
 				else
-					System.out.println("the number of planks should be odd");
-				break;
-			
+					throw new WrongLevelTypeException(t);
+				break;	
 		}
+		
 	}
 	
 	private void GenerateArrayUD(){ //generates array for planks go only up or only down
